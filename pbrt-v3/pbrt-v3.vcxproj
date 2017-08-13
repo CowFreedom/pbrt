@@ -110,7 +110,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\main\pbrt.cpp" />
+    <ClCompile Include="src\core\pbrtparse.cpp" />
+    <ClCompile Include="src\main\pbrt.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\core\pbrtparse.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
