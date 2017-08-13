@@ -11,15 +11,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\core\pbrtparse.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\main\pbrt.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\core\pbrtparse.h">
+    <ClInclude Include="src\core\pbrt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
