@@ -40,18 +40,38 @@ Reformatting options:
 	//std::cout << msg;
 }
 
+template<class Container>
+static void parseCommandline(const Container& args, Container& filenames, Options& options) {
+	auto argc = args.size();
 
-int main(int agrc, char* argv[]){
-	Options options;
-
-	std::array<std::string, agrc> commandLine;
-
-	for (size_t i = 0; i < agrc; i++) {
-		std::cout << argv[i] << "\t HAHA"<<"\n";
+	for (size_t i = 0; i < argc; i++) {
+		if (args[i] == "--nthreads" || args[i] == "-nthreads") {
+			if (i + 1 == argc)
+				usage("missing value after --nthreads argument");
+			options.nThreads = stoi(args[++i]);
+		}
+		else if (args[i] == "--nthreads=") {
+			if (i + 1 == argc)
+				usage("missing value after --nthreads argument");
+			options.nThreads = stoi(args[++i]);
+		}
+		else {
+			filenames.push_back(args[i]);
+		}
 	}
+	
 
+}
+
+int main(int argc, char* argv[]){
 	std::ios::sync_with_stdio(false);
+
+	Options options;
 	std::vector<std::string> filenames;
+
+	std::vector<std::string> args(argv, argv + argc);
+	parseCommandline(args, filenames, options);
+
 	char msg[] = "msg";
 	//usage("Hey");
 	std::cin.get(); //remove

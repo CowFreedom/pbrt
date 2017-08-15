@@ -11,6 +11,8 @@ by Matt Pharr, Greg Humphreys, and Wenzel Jakob.
 #include <iostream> //um cout und cerr zu nutzen
 #include<string>
 #include<vector>
+#include <memory>
+#include <array>
 
 
 
@@ -26,5 +28,6 @@ namespace pbrt {
 
 	};
 
+//forward declarations
 
 }
