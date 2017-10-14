@@ -4,8 +4,10 @@ by Matt Pharr, Greg Humphreys, and Wenzel Jakob.
 
 
 */
-#include <pbrt.h>
-#include<iostream> //remove
+#include "pbrt.h"
+#include "error.h"
+
+#include <iostream> //remove
 
 using pbrt::Options;
 
@@ -63,6 +65,9 @@ static void parseCommandline(const Container& args, Container& filenames, Option
 
 }
 
+#include <stdio.h>
+
+
 int main(int argc, char* argv[]){
 	std::ios::sync_with_stdio(false);
 
@@ -71,7 +76,15 @@ int main(int argc, char* argv[]){
 
 	std::vector<std::string> args(argv, argv + argc);
 	parseCommandline(args, filenames, options);
+	uint32_t wert = 18;
+	//pbrt::Error("Warning: ","Fehlertyp:","Keine Ahnung");
 
+
+	//pbrt::LOG << "NA\n"<<std::flush;
+	//pbrt::LOG(pbrt::WARNING)<<"Dies ist eine Warnung"<<std::endl;
+	pbrt::LOG(pbrt::CRITICAL) << "Dies ist kritisch" << std::endl;
+	//pbrt::LOG << "NEIN"<<std::endl;
+	//std::cout << pbrt::adder2("Hey","du","man");
 	char msg[] = "msg";
 	//usage("Hey");
 	std::cin.get(); //remove

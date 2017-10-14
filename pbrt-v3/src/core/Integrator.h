@@ -21,6 +21,8 @@ namespace pbrt {
 
 		virtual void Preprocess(const pbrt::Scene& scene, Sampler& sampler);
 
+		virtual void Render(const Scene& scene) override;
+
 	protected:
 		std::shared_ptr<const Camera> camera;
 

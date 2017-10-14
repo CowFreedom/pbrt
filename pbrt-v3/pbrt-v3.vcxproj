@@ -74,6 +74,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\Documents\Programming\C++\Programme\pbrt-v3\pbrt-v3\src\core;D:\Documents\Programming\C++\Programme\pbrt-v3\pbrt-v3\src\ext;D:\Documents\Programming\C++\Programme\pbrt-v3\pbrt-v3\src\ext\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -81,7 +82,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>D:\Documents\Programming\C++\Programme\pbrt-v3\pbrt-v3\src\core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Documents\Programming\C++\Programme\pbrt-v3\pbrt-v3\src\core;D:\Documents\Programming\C++\Programme\pbrt-v3\pbrt-v3\src\ext;D:\Documents\Programming\C++\Programme\pbrt-v3\pbrt-v3\src\ext\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -111,15 +112,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\core\scene.cpp" />
     <ClCompile Include="src\main\pbrt.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\core\Integrator.h" />
-    <ClInclude Include="src\core\light.h" />
+    <ClInclude Include="src\core\error.h" />
     <ClInclude Include="src\core\pbrt.h" />
-    <ClInclude Include="src\core\primitive.h" />
-    <ClInclude Include="src\core\scene.h" />
+    <ClInclude Include="src\core\rng.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\core\error.tpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
